@@ -8,7 +8,8 @@ server {
         location / {
             #try_files $uri $uri/ /index.php?_url=$uri&$args;
 	    	#try_files $uri $uri/ /index.php?$query_string;
-	    	rewrite ^(.*)$ /index.php?s=/$1 last;
+	    	#rewrite ^(.*)$ /index.php?s=/$1 last;
+            try_files $uri $uri/ /index.php?s=$uri&$args;
             #autoindex  on;          
         }
         location ~ \.php(.*)$ {
