@@ -1,5 +1,5 @@
-thinkphp5 功能测试
-thinkphp5 nginx简单配置
+#thinkphp5 功能测试
+#thinkphp5 nginx简单配置
 server {
         listen       80;
         server_name  tp5.dev;
