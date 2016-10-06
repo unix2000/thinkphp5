@@ -10,12 +10,28 @@
 // +----------------------------------------------------------------------
 
 return [
+    //redis
+    'redis' => [
+        
+    ],
+    //mongodb
+    'mongodb' => [
+        'type'  =>  '\think\mongo\Connection',
+        'hostname'       => '127.0.0.1',
+        'database'       => 'mydatabase',
+        'username'       => 'liner',
+        'password'       => '123456',
+        'hostport'       => '27017',
+        // 'dsn'            => 'mongodb://liner:123456@localhost:27017/mydatabase',
+    ],
     // 数据库类型
     'type'           => 'mysql',
+    //mongodb配置,除了type变化,其他配置按照实际来
+    //'type'  =>  '\think\mongo\Connection',
     // 服务器地址
     'hostname'       => '127.0.0.1',
     // 数据库名
-    'database'       => 'phalcon2',
+    'database'       => 'thinkphp5_tests',
     // 用户名
     'username'       => 'root',
     // 密码

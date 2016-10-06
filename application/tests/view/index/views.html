@@ -1,8 +1,35 @@
 {extend name="layout:base" /}
 {block name="main"}
 	<h1>{$email}</h1>
-	<div><img src="{:captcha_src()}" alt="验证码" /></div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<form id="form1" class="form form-horizontal responsive" method="post" action="/tests/index/commit">
+				{:token()}
+				<div class="form-group">
+					<div class="col-xs-8">
+						<label>验证码：</label>
+						<input class="form-control" type="text" name="verify" nullmsg="请输入验证码" datatype="*5-5" autocomplete="off" />					
+						<img id="captcha_img" onclick="this.src='{:captcha_src()}?d='+Math.random();" alt="点击更换" title="点击更换" src="{:captcha_src()}">
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="提交" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
 {/block}
 {block name="footer"}
 	xxx
+{/block}
+{block name="script"}
+	<!-- <script src="/static/js/H-ui.js"></script> -->
+	<script src="/static/js/validform/Validform.min.js"></script>
+	<script language="javascript">
+		$(function(){
+			$("#form1").Validform({
+				tiptype:3
+			});
+		});	
+	</script>
 {/block}

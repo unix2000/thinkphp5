@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -29,7 +29,7 @@ return [
     // 注册的根命名空间
     'root_namespace'         => [],
     // 扩展配置文件
-    'extra_config_list'      => ['database', 'validate'],
+    'extra_config_list'      => ['database', 'validate', 'mongo'],
     // 扩展函数文件
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
     // 默认输出类型
@@ -98,6 +98,7 @@ return [
     'route_config_file'      => ['route'],
     // 是否强制使用路由
     'url_route_must'         => false,
+    // 'url_route_must'         => true,
     // 域名部署
     'url_domain_deploy'      => false,
     // 域名根，如thinkphp.cn
@@ -232,5 +233,21 @@ return [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
+    ],
+    'captcha'  => [
+        // 验证码字符集合
+        //'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', 
+        // 验证码字体大小(px)
+        //'fontSize' => 25, 
+        // 是否画混淆曲线
+        //'useCurve' => true, 
+         // 验证码图片高度
+        //'imageH'   => 30,
+        // 验证码图片宽度
+        //'imageW'   => 100, 
+        // 验证码位数
+        //'length'   => 5, 
+        // 验证成功后是否重置        
+        'reset'    => true
     ],
 ];

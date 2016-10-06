@@ -3,21 +3,31 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{block name="title"}<title>Thinkphp5</title>{/block}
+	{block name="title"}<title>vue</title>{/block}
 	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	{block name="include"}{include file="public:header" /}{/block}
 </head>
 <body>	
-	{block name="menu"}菜单{/block}
-	<div class="container">
-		{block name="left"}左边分栏{/block}
+	<div class="container" id="app">
+		{block name="menu"}
+			<side-menu></side-menu>
+		{/block}
+		
+		{block name="left"}
+			<side-left></side-left>
+		{/block}
+
 		{block name="main"}主内容{/block}
-		{block name="right"}右边分栏{/block}
+
+		{block name="right"}
+			<side-right></side-right>
+		{/block}	
 	</div>	
 	{block name="footer"}{__block__}@xxx 版权所有{/block}
 	<!-- <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.js"></script> -->
 	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/static/js/vue/2.0.1/vue.js" type="text/javascript" charset="utf-8"></script>
 	{block name="script"}{/block}
 </body>
 </html>

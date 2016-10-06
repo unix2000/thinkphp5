@@ -2,13 +2,16 @@
 namespace app\tests\controller;
 use think\View;
 use think\Controller;
+use think\Request;
+use think\Config;
 //如果controller继承\think\Controller,view无需实例化,直接$this->fetch()调用
-class Index {
-// class Index extends Controller {
+// class Index {
+class Index extends Controller {
 	public function index()
 	{
-		$data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
-        return ['data'=>$data,'code'=>1,'message'=>'操作完成'];
+		// dump(Config::get()); //全部配置 laravel的Config::all()更合理些
+		// $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
+        // return ['data'=>$data,'code'=>1,'message'=>'操作完成'];
         // return json(['data'=>$data,'code'=>1,'message'=>'操作完成']);
         // return xml(['data'=>$data,'code'=>1,'message'=>'操作完成']);
         // 输出格式为<think><data></data></think>
@@ -33,5 +36,13 @@ class Index {
 		$view->assign('title','thinkphp5');
 		return $view->fetch();
 		// return $view->display('views');
+	}
+	public function commit(Request $req){
+		$code = $req->post('verify');
+		if(!captcha_check($code)){
+			$this->error('验证码不正确');
+		} else {
+			echo 'Right';
+		}
 	}
 }

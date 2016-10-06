@@ -1,0 +1,7 @@
+{extend name="layout:base" /}
+{block name="main"}
+	{volist name="data" id="vo" empty="暂时没有数据" }
+		{$vo.id}--{$vo.name} <br />
+	{/volist}
+	{$data->render()}
+{/block}
