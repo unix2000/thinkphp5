@@ -4,8 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	{block name="title"}<title>{$title}</title>{/block}
-	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<!-- <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> -->
+	<link href="/static/css/metro.css" rel="stylesheet">
+  <link href="/static/css/metro-icons.css" rel="stylesheet">
+  <link href="/static/css/metro-responsive.css" rel="stylesheet">
+  <link href="/static/css/metro-schemes.css" rel="stylesheet">
 	{block name="include"}{include file="public:header" /}{/block}
 </head>
 <body>	
@@ -13,4 +17,6 @@
 		{__CONTENT__}
 	</div>	
 </body>
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="/static/js/metro.min.js"></script>
 </html>

@@ -1,8 +1,14 @@
 <?php
 namespace app\tests\controller;
 use think\Controller;
+use app\tests\model\Items;
 
 class Form extends Controller {
+	public function table(){
+		$data = Items::limit(50)->select();
+		$this->assign('data',$data);
+		return $this->fetch();
+	}
 	public function index(){
 		return $this->fetch();
 	}

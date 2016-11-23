@@ -1,7 +1,27 @@
 {extend name="layout:base" /}
 {block name="main"}
+	<!-- <table class="table hovered bordered">
+	  <thead>
+	    	<tr>
+	        <th class="sortable-column">ID</th>
+	        <th class="sortable-column">用户姓名</th>
+	        <th class="sortable-column">电子邮件</th>
+	        <th class="sortable-column">地址</th>
+	      </tr>
+	  </thead>
+	  <tbody>
+	  	{volist name="data" id="vo" empty="暂时没有数据" }
+	  	<tr>
+	  		<td>{$vo.id}</td>
+	  		<td>{$vo.name}</td>
+	  		<td>{$vo.email}</td>
+	  		<td>{$vo.address}</td>
+	  	</tr>
+	  	{/volist}
+	  </tbody>
+	</table> -->
 	{volist name="data" id="vo" empty="暂时没有数据" }
-		{$vo.id}--{$vo.name} <br />
+		<p>{$vo.id.'----'.$vo.name}</p>
 	{/volist}
 	{$data->render()}
 {/block}

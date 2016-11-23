@@ -98,7 +98,7 @@ class Dbs extends MongoBase {
 		// 	->paginate(20);
 
 		//Active Record
-		$data = Items::paginate(20);
+		$data = Items::paginate(8);
 		$page = $data->render();
 		$this->assign('page', $page);
 		// dump($page);
