@@ -1,0 +1,46 @@
+{extend name="layout:base" /}
+{block name="main"}
+	<div class="page-header">===Form table fixed===</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table table-striped sticky-header">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>名称</th>
+						<th>Email</th>
+						<th>住址</th>
+					</tr>
+				</thead>
+				<tbody>
+				{volist name="data" id="vo" empty="暂时没有数据" }
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.email}</td>
+					<td>{$vo.address}</td>
+				</tr>
+				{/volist}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{/block}
+
+{block name="script"}
+	<script src="/static/js/table/jquery.floatThead.min.js" type="text/javascript"></script>
+	<script language="javascript">
+		// $(".sticky-header").floatThead({
+		// 	top:150
+		// });
+		var $table = $('.sticky-header');
+		$table.floatThead({
+			// debug: true,
+			// 'auto', 'fixed', 'absolute'.
+			position: 'absolute',
+		    responsiveContainer: function($table){
+		        return $table.closest('.table-responsive');
+		    }
+		});
+	</script>
+{/block}
