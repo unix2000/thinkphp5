@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	{block name="title"}<title>Thinkphp5</title>{/block}
+	<link href="/static/vendor/semantic/dist/semantic.min.css" rel="stylesheet">
+    {block name="style"}{/block}
+</head>
+<body>	
+	<div class="container">
+		{block name="left"}左边分栏{/block}
+		{block name="main"}主内容{/block}
+		{block name="right"}右边分栏{/block}
+	</div>	
+	{block name="footer"}{__block__}@xxx 版权所有{/block}
+	<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<script src="/static/vendor/semantic/dist/semantic.min.js"></script>
+	{block name="script"}{/block}
+</body>
+</html>

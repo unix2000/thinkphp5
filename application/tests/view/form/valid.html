@@ -1,0 +1,67 @@
+{extend name="common@layout:grid" /}
+{block name="main"}
+	<form class="form-horizontal" id="form_2_1_1" method="post">
+		<div class="form-group">
+			<label class="col-sm-2 control-label text-right">文本必填：</label>
+			<div class="col-sm-4">
+				<input type="text" id="test_2_1_1_1" name="test_2_1_1_1" class="form-control" valid="r" 
+					validTitle="文本必填测试内容" validInfoArea="test_2_1_1_1_info_area" />
+			</div>
+			<div class="col-sm-6"><p class="help-block" id="test_2_1_1_1_info_area"></p></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label text-right">Email格式：</label>
+			<div class="col-sm-4">
+				<input type="text" id="test_2_1_1_2" name="test_2_1_1_2" class="form-control" valid="r|email" 
+					validTitle="Email格式测试内容" validInfoArea="test_2_1_1_2_info_area" />
+			</div>
+			<div class="col-sm-6"><p class="help-block" id="test_2_1_1_2_info_area"></p></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label text-right">文本长度：</label>
+			<div class="col-sm-4">
+				<input type="text" id="test_2_1_1_3" name="test_2_1_1_3" class="form-control" valid="r|le4-le20" 
+					validTitle="文本长度测试内容" validInfoArea="test_2_1_1_3_info_area" />
+			</div>
+			<div class="col-sm-6"><p class="help-block" id="test_2_1_1_3_info_area"></p></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label text-right">文本大小：</label>
+			<div class="col-sm-4">
+				<input type="text" id="test_2_1_1_4" name="test_2_1_1_4" class="form-control" valid="r|double|me100-me200" 
+					validTitle="文本大小测试内容" validInfoArea="test_2_1_1_4_info_area" />
+			</div>
+			<div class="col-sm-6"><p class="help-block" id="test_2_1_1_4_info_area"></p></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label text-right">文本综合：</label>
+			<div class="col-sm-4">
+				<input type="text" id="test_2_1_1_5" name="test_2_1_1_5" class="form-control" valid="r|english|l-le20" 
+					validTitle="文本综合测试内容" validInfoArea="test_2_1_1_5_info_area" />
+			</div>
+			<div class="col-sm-6"><p class="help-block" id="test_2_1_1_5_info_area"></p></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="button" class="btn btn-primary" onclick="submit_2_1_1();">
+					<i class="fa fa-save"></i>  提交表单
+				</button>
+			</div>
+		</div>
+	</form>
+{/block}
+
+{block name="script"}
+	<script type="text/javascript">
+        var validator_2_1_1;
+        function submit_2_1_1(){
+            if(!validator_2_1_1.validResult()){
+                return;
+            }
+            $.fn.dlshouwen.validator.tools.toast('验证通过！', 'success', 3000);
+        }
+        $(function(){
+            validator_2_1_1 = $.fn.dlshouwen.validator.init($('#form_2_1_1'));
+        });
+    </script>
+{/block}

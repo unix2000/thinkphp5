@@ -23,7 +23,16 @@
         "guzzlehttp/guzzle": "^6.2",
         "topthink/think-image": "^1.0",
         "topthink/think-helper": "^1.0",
-        "overtrue/wechat": "~3.1"
+        "overtrue/wechat": "~3.1",
+        "symfony/http-foundation": "^3.2",
+        "symfony/debug": "^3.2",
+        "symfony/finder": "^3.2",
+        "symfony/form": "^3.2",
+        "symfony/security-csrf": "^3.2",
+        "symfony/twig-bridge": "^3.2",
+        "symfony/translation": "^3.2",
+        "symfony/config": "^3.2",
+        "symfony/validator": "^3.2"
     },
     "extra": {
         "think-path": "thinkphp"

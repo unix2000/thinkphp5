@@ -1,0 +1,36 @@
+{extend name="common@layout:grid" /}
+{block name="main"}
+	<div id="grid" class="dlshouwen-grid-container"></div>
+    <div id="toolbar" class="dlshouwen-grid-toolbar-container"></div>
+{/block}
+
+{block name="script"}
+	<script type="text/javascript">
+
+		//定义表格
+		var gridColumns = [
+			{id:'id', title:'用户编号', type:'string', columnClass:'text-center', fastQuery:true, fastQueryType:'eq',headerStyle:'background:#00a2ca;color:white;'},
+			{id:'name', title:'用户姓名', type:'string', columnClass:'text-center', fastQuery:true, fastQueryType:'lk',headerStyle:'background:#00a2ca;color:white;'},
+			{id:'email', title:'Email', type:'string', columnClass:'text-center', hideType:'xs', fastQuery:true, fastQueryType:'range',headerStyle:'background:#00a2ca;color:white;'},
+			{id:'address', title:'地址', type:'string', columnClass:'text-center', hideType:'sm|xs', fastQuery:true, fastQueryType:'eq',headerStyle:'background:#00a2ca;color:white;'},
+		];
+		var gridOption = {
+			lang : 'zh-cn',
+			ajaxLoad : true,
+			// loadAll : true,
+			loadURL : '/tests/form/datas',
+			exportFileName : '数据列表',
+			// datas : datas,
+			check : true,
+			columns : gridColumns,
+			pageSize : 10,
+			pageSizeLimit : [10, 20, 50],
+			gridContainer : 'grid',
+			toolbarContainer : 'toolbar'
+		};
+		var grid = $.fn.dlshouwen.grid.init(gridOption);
+		$(function(){
+			grid.load();
+		});
+    </script>
+{/block}

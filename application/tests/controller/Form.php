@@ -2,10 +2,50 @@
 namespace app\tests\controller;
 use think\Controller;
 use app\tests\model\Items;
+use think\Request;
 
 class Form extends Controller {
+	public function semantic()
+	{
+		return $this->fetch();
+	}
+	public function valid()
+	{
+		return $this->fetch();
+	}
+	public function datas(Request $req){
+		//ajax获取必须返回Pager对象,非ajax获取返回json数组即可
+		// {"advanceQueryConditions":[],"advanceQuerySorts":[],"exhibitDatas":[],"exportAllData":false,"exportColumns":[],"exportDataIsProcessed":false,"exportDatas":[],"exportFileName":"","exportType":"","fastQueryParameters":{},"isExport":false,"isSuccess":true,"nowPage":1,"pageCount":20,"pageSize":10,"parameters":{},"recordCount":200,"startRecord":0}
+		//dtGrid使用
+		if ($req->isAjax()){
+			// $data = array();
+			$dtpage = $req->post('gridPager'); //传过来是json对象
+			$dt_arr = json_decode($dtpage,true);
+			$page = $dt_arr['pageSize'];
+			$startRecord = $dt_arr['startRecord'];
+			// $nowPage = $dt_arr['nowPage'];
+
+			// $callback = $req->post('callback');
+			$data['exhibitDatas'] = Items::limit($startRecord,$page)->select();		
+			$data['isSuccess'] = true; //此参数ajax分页很重要,要不提示callback错误 很奇怪 因为不是jsonp获取
+			//以下三参数必须加入,要不前端出现undefine错误
+			$data['recordCount'] = Items::count();
+			$data['pageCount'] = (int)(Items::count() / $page);
+			$data['pageSize'] = $page;
+			$data['startRecord'] = $dt_arr['startRecord'];
+			$data['nowPage'] = $dt_arr['nowPage'];
+			echo json_encode($data);
+			// echo $callback.'('.json_encode($data).')';  
+		}
+		// $data = Items::select();
+		// dump($data);
+		
+	}
+	public function grid(){
+		return $this->fetch();
+	}
 	public function table(){
-		$data = Items::limit(50)->select();
+		$data = Items::limit(12)->select();
 		$this->assign('data',$data);
 		return $this->fetch();
 	}
@@ -48,6 +88,7 @@ class Form extends Controller {
 	    // }
 	}
 	public function build(){
-
+		$data = Items::limit(20,30)->select();
+		dump($data);
 	}
 }

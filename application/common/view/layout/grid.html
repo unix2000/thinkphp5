@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	    {block name="title"}<title>Thinkphp5</title>{/block}
+        <link rel="stylesheet" type="text/css" href="/static/vendor/grid/dependents/bootstrap/css/bootstrap.min.css" />
+        <link href="/static/vendor/uikit/css/uikit.almost-flat.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+            <script src="/static/vendor/grid/dependents/bootstrap/plugins/ie/html5shiv.js"></script>
+            <script src="/static/vendor/grid/dependents/bootstrap/plugins/ie/respond.js"></script>
+        <![endif]-->
+        <!--[if lt IE 8]>
+            <script src="/static/vendor/grid/dependents/bootstrap/plugins/ie/json2.js"></script>
+        <![endif]-->
+        <!-- font-awesome -->
+        <link rel="stylesheet" type="text/css" href="/static/vendor/grid/dependents/fontAwesome/css/font-awesome.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/static/vendor/grid/dlshouwen.grid.css" />
+        <link rel="stylesheet" type="text/css" href="/static/vendor/grid/dependents/datePicker/skin/WdatePicker.css" />
+        <link rel="stylesheet" type="text/css" href="/static/vendor/grid/dependents/datePicker/skin/default/datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="/static/vendor/validator/dlshouwen.validator.css" />
+    </head>
+    <body>
+        <div class="container">
+            {block name="left"}左边分栏{/block}
+            {block name="main"}主内容{/block}
+            {block name="right"}右边分栏{/block}
+        </div>	
+        {block name="footer"}{__block__}@xxx 版权所有{/block}
+        <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="/static/vendor/uikit/js/uikit.min.js"></script>
+        <script type="text/javascript" src="/static/vendor/grid/dependents/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/vendor/grid/dlshouwen.grid.js"></script>
+        <script type="text/javascript" src="/static/vendor/grid/i18n/zh-cn.js"></script>
+        <script type="text/javascript" src="/static/vendor/grid/dependents/datePicker/WdatePicker.js" defer="defer"></script>
+        <script type="text/javascript" src="/static/vendor/validator/dlshouwen.validator.min.js"></script>
+        <script type="text/javascript" src="/static/vendor/validator/i18n/zh-cn.js"></script>
+        {block name="script"}{/block}
+    </body>
+</html>
